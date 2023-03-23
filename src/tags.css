@@ -7,7 +7,6 @@
 .actor-tag {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  white-space: nowrap;
 }
 
 .tag {
@@ -15,11 +14,10 @@
   font-size: 0.8em;
   text-align: center;
   font-weight: bold;
-  padding: 0.3em 0.5em;
-  margin-right: 0.5em;
+  padding: 0.3em 0.3em;
+  margin-right: 0.4em;
   margin-bottom: 0.5em;
   border-radius: 0.3em;
-  flex-basis: 10em;
 }
 
 .genre-tag:nth-of-type(1) {

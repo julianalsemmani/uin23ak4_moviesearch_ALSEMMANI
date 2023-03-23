@@ -29,7 +29,6 @@ function HomePage() {
       setMovieList(movieList);
     }
     setIsLoading(false);
-    console.log(movieList);
   };
 
   useEffect(() => {

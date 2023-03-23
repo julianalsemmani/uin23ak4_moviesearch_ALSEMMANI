@@ -17,8 +17,9 @@ function Movie() {
 
     useEffect(() => {
         fetchMovie();
-         // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [slug])
+    
     return (
         <>
             {isLoading ? (
@@ -41,7 +42,12 @@ function Movie() {
                         </div>
                         <p className="bold">Actors:</p>
                         <div className='tag-container'>
-                            <p>{movie.Actors && movie.Actors.split(",").map(actor => <span className="tag actor-tag">{actor.trim()}</span>)}</p>
+                            <p>{movie.Actors.split(",").map(actor => {
+                                const names = actor.trim().split(" ");
+                                const firstName = names[0];
+                                const lastName = names.length > 1 ? names[names.length - 1].charAt(0) + "." : "";
+                                return <span className="tag actor-tag">{`${firstName} ${lastName}`}</span>;
+                            })}</p>
                         </div>
                         <p><span className="bold">IMDb Rating</span>: {movie.imdbRating}</p>
                         <p className="bold">Awards:</p>
