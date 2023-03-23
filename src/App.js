@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   const fetchMovieDetails = async (imdbID) => {
-    const url = `http://www.omdbapi.com/?i=${imdbID}&apikey=9e1609b`
+    const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=9e1609b`
     const response = await fetch(url)
     const data = await response.json()
     return data
@@ -16,7 +16,7 @@ function App() {
 
   const fetchMovies = async () => {
     setIsLoading(true);
-    const url = `http://www.omdbapi.com/?apikey=9e1609b&s=${search}&type=movie`;
+    const url = `https://www.omdbapi.com/?apikey=9e1609b&s=${search}&type=movie`;
     const response = await fetch(url);
     const data = await response.json();
     if (data.Response !== 'False') {
