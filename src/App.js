@@ -1,64 +1,21 @@
-import SearchResults from "./Components/SearchResults";
-import { useState, useEffect } from "react";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import OneMovie from './Components/OneMovie';
+import HomePage from './pages/HomePage';
+import SingleMoviePage from './pages/SingleMoviePage';
+
+
 
 function App() {
-
-  const [search, setSearch] = useState('James Bond')
-  const [movieList, setMovieList] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  const fetchMovieDetails = async (imdbID) => {
-    const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=9e1609b`
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
-  }
-
-  const fetchMovies = async () => {
-    setIsLoading(true);
-    const url = `https://www.omdbapi.com/?apikey=9e1609b&s=${search}&type=movie`;
-    const response = await fetch(url);
-    const data = await response.json();
-    if (data.Response !== 'False') {
-      const movieList = [];
-      for (const movie of data.Search) {
-        const details = await fetchMovieDetails(movie.imdbID);
-        const movieWithDetails = { ...movie, ...details };
-        movieList.push(movieWithDetails);
-      }
-      setMovieList(movieList);
-    }
-    setIsLoading(false);
-    console.log(movieList);
-  };
-
-  useEffect(() => {
-    if (search !== '' && search.length >= 3) {
-      fetchMovies()
-    }
-    // eslint-disable-next-line
-  }, [search])
-
   return (
-    <div className="App">
-      <header>
-        <h1>Movie Search</h1>
-        <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for a movie" />
-      </header>
+    <Router> 
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/:slug" element={<SingleMoviePage />} />
+      </Routes>
+    </Router>
 
-      {isLoading ? (
-        <div className="loading">
-          <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="Loading..." />
-        </div>
-      ) : (
-        <SearchResults movieList={movieList} />
-      )}
-
-      <footer>
-        <a id="copyright" href="https://github.com/julianalsemmani">Copyright &copy; Julian Alsemmani</a>
-      </footer>
-    </div>
-  );
+  )
 }
 
-export default App;
+export default App
