@@ -19,7 +19,7 @@ function Movie() {
         fetchMovie();
         // eslint-disable-next-line
     }, [slug])
-    
+
     return (
         <>
             {isLoading ? (
@@ -29,7 +29,7 @@ function Movie() {
             ) : (
                 <main className='one-movie'>
                     <img src={movie.Poster !== 'N/A' ? movie.Poster : 'https://www.popcorn.app/assets/app/images/placeholder-movieimage.png'} alt={movie.Title} />
-                    <div>
+                    <article>
                         <h3>{movie.Title}</h3>
                         <p><span className="bold">Year</span>: {movie.Year} | <span className="bold">Released</span>: {movie.Released}</p>
                         <p><span className="bold">Genre</span>: </p>
@@ -54,7 +54,7 @@ function Movie() {
                         <p>{movie.Awards}</p>
                         <p className="bold">Plot</p>
                         <p className='plot-text'>{movie.Plot}</p>
-                    </div>
+                    </article>
                 </main>
             )}
         </>

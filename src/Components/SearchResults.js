@@ -5,11 +5,11 @@ export default function SearchResults(props) {
 
     return (
         <main>
-            <div className="movie-cards">
+            <article className="movie-cards">
                 {movieList.map(movie => (
                     <MovieCard movie={movie} />
                 ))}
-            </div>
+            </article>
         </main>
     )
 }
