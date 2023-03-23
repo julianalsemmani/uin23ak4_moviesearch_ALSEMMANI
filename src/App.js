@@ -1,4 +1,4 @@
-import SearchResults from "./components/SearchResults";
+import SearchResults from "./Components/SearchResults";
 import { useState, useEffect } from "react";
 
 function App() {
