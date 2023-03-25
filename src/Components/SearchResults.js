@@ -7,7 +7,7 @@ export default function SearchResults(props) {
         <main>
             <article className="movie-cards">
                 {movieList.map(movie => (
-                    <MovieCard movie={movie} />
+                    <MovieCard key={movie.imdbID} movie={movie} />
                 ))}
             </article>
         </main>

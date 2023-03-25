@@ -34,19 +34,19 @@ function Movie() {
                         <p><span className="bold">Year</span>: {movie.Year} | <span className="bold">Released</span>: {movie.Released}</p>
                         <p><span className="bold">Genre</span>: </p>
                         <div className='tag-container'>
-                            <p>{movie.Genre && movie.Genre.split(",").map(genre => <span className="tag genre-tag">{genre.trim()}</span>)}</p>
+                            <p>{movie.Genre && movie.Genre.split(",").map((genre, i) => <span key={i} className="tag genre-tag">{genre.trim()}</span>)}</p>
                         </div>
                         <p><span className="bold">Director</span>:</p>
                         <div className='tag-container'>
-                            <p>{movie.Director && movie.Director.split(",").map(director => <span className="tag director-tag">{director.trim()}</span>)}</p>
+                            <p>{movie.Director && movie.Director.split(",").map((director, i) => <span key={i} className="tag director-tag">{director.trim()}</span>)}</p>
                         </div>
                         <p className="bold">Actors:</p>
                         <div className='tag-container'>
-                            <p>{movie.Actors.split(",").map(actor => {
+                            <p>{movie.Actors.split(",").map((actor, i) => {
                                 const names = actor.trim().split(" ");
                                 const firstName = names[0];
                                 const lastName = names.length > 1 ? names[names.length - 1].charAt(0) + "." : "";
-                                return <span className="tag actor-tag">{`${firstName} ${lastName}`}</span>;
+                                return <span key={i} className="tag actor-tag">{`${firstName} ${lastName}`}</span>;
                             })}</p>
                         </div>
                         <p><span className="bold">IMDb Rating</span>: {movie.imdbRating}</p>
