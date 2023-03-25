@@ -1,60 +1,69 @@
 /* Jeg valgte å ha tags i en egen CSS fil, sånn at hoved CSS arket ikke ville bli så rotete */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actor-tag {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .tag {
-    color: #fff;
-    font-size: 0.8em;
-    text-align: center;
-    font-weight: bold;
-    padding: 0.3em 0.5em;
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
-    border-radius: 0.3em;
-    flex-basis: 10em;
-  }
-  
-  .genre-tag:nth-of-type(1) {
-    background-color: #007bff;
-  }
-  
-  .genre-tag:nth-of-type(2) {
-    background-color: #6c757d;
-  }
-  
-  .genre-tag:nth-of-type(3) {
-    background-color: #28a745;
-  }
-  
-  .genre-tag:nth-of-type(4) {
-    background-color: #dc3545;
-  }
-  
-  .actor-tag:nth-of-type(1) {
-    background-color: #1A535C;
-  }
-  
-  .actor-tag:nth-of-type(2) {
-    background-color: #37938d;
-  }
-  
-  .actor-tag:nth-of-type(3) {
-    background-color: #307d30;
-  }
-  
-  .actor-tag:nth-of-type(4) {
-    background-color: #8c3737;
-  }
-  
-  .director-tag:nth-of-type(1) {
-    background-color: #4f2c5f;
-  }
-  
-  .director-tag:nth-of-type(2) {
-    background-color: #B52B65;
-  }
-  
-  .director-tag:nth-of-type(3) {
-    background-color: #3D3D3D;
-  }
-  
-  .director-tag:nth-of-type(4) {
-    background-color: #FF6B6B;
-  }
+  color: #fff;
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.3em 0.3em;
+  margin-right: 0.4em;
+  margin-bottom: 0.5em;
+  border-radius: 0.3em;
+}
+
+.genre-tag:nth-of-type(1) {
+  background-color: #007bff;
+}
+
+.genre-tag:nth-of-type(2) {
+  background-color: #6c757d;
+}
+
+.genre-tag:nth-of-type(3) {
+  background-color: #28a745;
+}
+
+.genre-tag:nth-of-type(4) {
+  background-color: #dc3545;
+}
+
+.actor-tag:nth-of-type(1) {
+  background-color: #1A535C;
+}
+
+.actor-tag:nth-of-type(2) {
+  background-color: #37938d;
+}
+
+.actor-tag:nth-of-type(3) {
+  background-color: #307d30;
+}
+
+.actor-tag:nth-of-type(4) {
+  background-color: #8c3737;
+}
+
+.director-tag:nth-of-type(1) {
+  background-color: #4f2c5f;
+}
+
+.director-tag:nth-of-type(2) {
+  background-color: #B52B65;
+}
+
+.director-tag:nth-of-type(3) {
+  background-color: #3D3D3D;
+}
+
+.director-tag:nth-of-type(4) {
+  background-color: #FF6B6B;
+}
