@@ -51,6 +51,7 @@ function HomePage() {
     if (search !== '' && search.length >= 3) {
       fetchMovies()
     }
+    // Tatt denne kommentaren for å fjerne erroren jeg fikk i konsollen
     // eslint-disable-next-line
   }, [search])
 

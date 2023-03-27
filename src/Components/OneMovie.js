@@ -20,6 +20,13 @@ function Movie() {
         // eslint-disable-next-line
     }, [slug])
 
+    /*
+    Første koden: Den sjekker om isLoading er true, hvis den er true så vil den vise loading gif, hvis den er false så vil den vise filmen.
+    Andre koden: Den sjekker om movie.Poster er lik 'N/A', hvis den er lik 'N/A' så vil den vise placeholder bilde, hvis den ikke er lik 'N/A' så vil den vise filmens bilde.
+    Den looper gjennom movie.Genre og splitter den på komma, så lager den en span for hver genre.
+    Den looper gjennom movie.Directors og splitter den på komma, så lager den en span for hver regissør.
+    Den looper gjennom movie.Actors og splitter den på komma, så lager den en span for hver skuespiller. Den splitter også fornavn og etternavn, og forkorter etternavn til kun første bokstav og punktum.
+    */
     return (
         <>
             {isLoading ? (
@@ -43,10 +50,8 @@ function Movie() {
                         <p className="bold">Actors:</p>
                         <div className='tag-container'>
                             <p>{movie.Actors.split(",").map((actor, i) => {
-                                const names = actor.trim().split(" ");
-                                const firstName = names[0];
-                                const lastName = names.length > 1 ? names[names.length - 1].charAt(0) + "." : "";
-                                return <span key={i} className="tag actor-tag">{`${firstName} ${lastName}`}</span>;
+                                const [firstName, lastName] = actor.trim().split(" ");
+                                return <span key={i} className="tag actor-tag">{firstName} {lastName && lastName.charAt(0)}.</span>;
                             })}</p>
                         </div>
                         <p><span className="bold">IMDb Rating</span>: {movie.imdbRating}</p>
