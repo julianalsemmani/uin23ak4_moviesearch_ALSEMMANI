@@ -1,4 +1,4 @@
-import '../tags.css';
+import '../css/tags.css';
 import { Link } from 'react-router-dom';
 
 export default function MovieCard(props) {
